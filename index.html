@@ -46,6 +46,11 @@ button{font-family:inherit}
 .study-visual--light .study-visual__title{color:#211c16}
 .study-visual--light .study-visual__text{color:#5c5146}
 .study-visual--light .study-visual__image:after{background:linear-gradient(90deg,rgba(255,253,249,.34),rgba(255,253,249,0) 48%)}
+.model-card{perspective:1200px;height:390px;cursor:pointer}
+.model-card__media{position:relative;height:142px;margin:-10px -8px 18px;border-radius:12px;overflow:hidden;background:#efe8db}
+.model-card__media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.model-card:hover .model-card__media img{transform:scale(1.06)}
+.model-card__media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,28,22,0),rgba(33,28,22,.18))}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.study-visual__image img{animation:none!important;transition:none!important}}
 @media (max-width:920px){
   .site-header{padding:0 16px!important}
@@ -58,6 +63,7 @@ button{font-family:inherit}
   .study-visual__inner{grid-template-columns:1fr;border-radius:14px}
   .study-visual__copy{padding:24px}
   .study-visual__image{height:clamp(220px,52vw,320px);order:-1}
+  .model-card{height:400px}
   section{scroll-margin-top:74px}
 }
 @media (max-width:640px){
@@ -65,6 +71,215 @@ button{font-family:inherit}
   main section, main>div, footer{padding-left:20px!important;padding-right:20px!important}
   #top [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+}
+
+/* =========================
+   BOARD GAME BOOK
+========================= */
+
+.book-section {
+  padding: 48px clamp(24px, 6vw, 96px) 72px;
+  background: linear-gradient(180deg, #f7f3ec, #f2ebdd);
+  border-top: 1px solid rgba(33, 28, 22, 0.08);
+}
+
+.book-section__header {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto 32px;
+}
+
+.book-section__kicker {
+  margin-bottom: 8px;
+  color: #8f2d24;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.book-section__title {
+  margin: 0 0 10px;
+  color: #211c16;
+  font-family: "Lora", serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.book-section__description {
+  max-width: 680px;
+  margin: 0;
+  color: #6b6155;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.book-section__viewer-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.book-section__card {
+  width: 100%;
+  max-width: 1100px;
+  padding: 18px;
+  overflow: hidden;
+  background: #fffdf9;
+  border: 1px solid rgba(33, 28, 22, 0.09);
+  border-radius: 20px;
+  box-shadow: 0 16px 45px -20px rgba(33, 28, 22, 0.35);
+}
+
+.book-section__frame {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  background: #efe8db;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+}
+
+.book-section__frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.book-section__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 14px;
+  padding: 13px 18px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  background: #8f2d24;
+  border: 0;
+  border-radius: 11px;
+  box-shadow: 0 4px 14px -6px rgba(143, 45, 36, 0.5);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.book-section__button:hover {
+  background: #6f231c;
+}
+
+.book-section__button:active {
+  transform: scale(0.99);
+}
+
+.book-section__button-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+}
+
+/* Tablet */
+@media (max-width: 920px) {
+  #sach-bg.book-section {
+    padding: 40px 24px 56px !important;
+  }
+
+  .book-section__header {
+    margin-bottom: 24px;
+  }
+
+  .book-section__card {
+    max-width: 760px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .book-section__frame {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  #sach-bg.book-section {
+    padding: 32px 16px 44px !important;
+  }
+
+  .book-section__header {
+    margin-bottom: 20px;
+  }
+
+  .book-section__kicker {
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+  }
+
+  .book-section__title {
+    margin-bottom: 8px;
+    font-size: clamp(23px, 7vw, 28px);
+    line-height: 1.25;
+  }
+
+  .book-section__description {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .book-section__card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px -18px rgba(33, 28, 22, 0.4);
+  }
+
+  .book-section__frame {
+    width: 100%;
+    height: clamp(320px, 105vw, 440px);
+    min-height: 0;
+    border-radius: 9px;
+    aspect-ratio: auto;
+  }
+
+  .book-section__button {
+    min-height: 46px;
+    margin-top: 10px;
+    padding: 11px 14px;
+    font-size: 13px;
+    border-radius: 9px;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+  #sach-bg.book-section {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .book-section__card {
+    padding: 8px;
+  }
+
+  .book-section__frame {
+    height: clamp(300px, 110vw, 390px);
+  }
+
+  .book-section__button {
+    min-height: 44px;
+  }
 }
 </style>
 </helmet>
@@ -97,7 +312,20 @@ button{font-family:inherit}
       </div>
     </sc-if>
   </div>
+
+  <button
+  class="mobile-menu-button"
+  onClick="{{ openMenu }}"
+  type="button"
+  aria-label="Mở mục lục"
+  aria-expanded="{{ menuExpanded }}"
+  aria-controls="mobile-menu-drawer"
+>
+  <span class="mobile-menu-button__icon" aria-hidden="true"></span>
+</button>
 </header>
+
+
 
 <nav class="side-nav" style="position:fixed;top:60px;left:0;bottom:0;width:246px;z-index:40;padding:34px 20px 34px 26px;border-right:1px solid rgba(33,28,22,.08);overflow-y:auto;background:#f4efe6">
   <div style="font-size:10.5px;font-weight:700;letter-spacing:1.6px;color:#a89e90;text-transform:uppercase;margin-bottom:16px">Mục lục</div>
@@ -300,16 +528,21 @@ button{font-family:inherit}
 
     <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
       <sc-for list="{{ models }}" as="m" hint-placeholder-count="4">
-        <div onClick="{{ flip }}" style="perspective:1200px;height:340px;cursor:pointer">
+        <div class="model-card" onClick="{{ flip }}">
           <div data-flip-inner style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)">
             <!-- FRONT -->
-            <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-              <div style="font-family:'Lora',serif;font-weight:700;font-size:52px;line-height:.9;color:rgba(143,45,36,.14)">{{ m.n }}</div>
-              <div style="flex:1"></div>
+            <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:18px 18px 20px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(33,28,22,.05);overflow:hidden">
+              <figure class="model-card__media" style="margin:-10px -8px 18px">
+                <img src="{{ m.image }}" alt="{{ m.alt }}">
+              </figure>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+                <div style="font-family:'Lora',serif;font-weight:700;font-size:34px;line-height:.9;color:rgba(143,45,36,.18)">{{ m.n }}</div>
+                <div style="display:inline-block;padding:4px 10px;background:#f3ede2;border-radius:20px;font-size:11.5px;font-weight:600;color:#8f2d24;white-space:nowrap">{{ m.time }}</div>
+              </div>
               <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#b3873f;text-transform:uppercase;margin-bottom:6px">Mô hình</div>
               <h4 style="font-family:'Lora',serif;font-weight:600;font-size:21px;line-height:1.2;margin:0 0 6px;color:#211c16">{{ m.name }}</h4>
               <div style="font-size:12.5px;color:#a89e90">{{ m.region }}</div>
-              <div style="display:inline-block;margin-top:10px;padding:4px 11px;background:#f3ede2;border-radius:20px;font-size:11.5px;font-weight:600;color:#8f2d24">{{ m.time }}</div>
+              <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:600;color:#8f2d24">Xem chi tiết
                 <span style="width:14px;height:14px;border-top:2px solid #8f2d24;border-right:2px solid #8f2d24;transform:rotate(45deg)"></span>
               </div>
@@ -585,24 +818,123 @@ button{font-family:inherit}
     </div>
   </section>
 
-  <section id="sach-bg" data-screen-label="Sách board game" style="padding:38px 64px 66px;background:linear-gradient(180deg,#f7f3ec,#f2ebdd);border-top:1px solid rgba(33,28,22,.08)">
-    <div data-reveal style="margin-bottom:26px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Tài liệu · Ôn tập</div>
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0 0 10px;color:#211c16">Sách hướng dẫn chơi board game</h3>
-      <p style="font-size:15px;line-height:1.6;color:#6b6155;max-width:640px;margin:0">Luật chơi và hướng dẫn dưới dạng sách lật — lật từng trang để đọc, hoặc mở toàn màn hình.</p>
+  <section
+  id="sach-bg"
+  data-screen-label="Sách board game"
+  style="
+    padding:48px clamp(24px,6vw,96px) 72px;
+    background:linear-gradient(180deg,#f7f3ec,#f2ebdd);
+    border-top:1px solid rgba(33,28,22,.08);
+  "
+>
+  <div data-reveal style="max-width:1320px;margin:0 auto 32px">
+    <div style="
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:1.5px;
+      color:#8f2d24;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    ">
+      Tài liệu · Ôn tập
     </div>
-    <div data-reveal style="display:flex;justify-content:center">
-      <div style="width:100%;max-width:594px;background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:18px;padding:22px;box-shadow:0 8px 30px -14px rgba(33,28,22,.3)">
-        <div id="bg-frame" style="position:relative;width:100%;aspect-ratio:550 / 350;border-radius:10px;overflow:hidden;background:#efe8db">
-          <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block" src="https://online.anyflip.com/wqdjo/dczj/index.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-        </div>
-        <button onClick="{{ goFull }}" style="display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:13px 16px;background:#8f2d24;color:#fff;border:none;border-radius:11px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px -6px rgba(143,45,36,.5)" style-hover="background:#6f231c">
-          <span style="display:inline-block;width:14px;height:14px;border:2px solid #fff;border-radius:3px"></span>
-          Mở toàn màn hình
-        </button>
+
+    <h3 style="
+      font-family:'Lora',serif;
+      font-weight:600;
+      font-size:30px;
+      margin:0 0 10px;
+      color:#211c16;
+    ">
+      Sách hướng dẫn chơi board game
+    </h3>
+
+    <p style="
+      font-size:15px;
+      line-height:1.6;
+      color:#6b6155;
+      max-width:680px;
+      margin:0;
+    ">
+      Luật chơi và hướng dẫn dưới dạng sách lật — lật từng trang để đọc,
+      hoặc mở toàn màn hình.
+    </p>
+  </div>
+
+  <div data-reveal style="display:flex;justify-content:center">
+    <div style="
+      width:100%;
+      max-width:1100px;
+      background:#fffdf9;
+      border:1px solid rgba(33,28,22,.09);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 16px 45px -20px rgba(33,28,22,.35);
+    ">
+      <div
+        id="bg-frame"
+        style="
+          position:relative;
+          width:100%;
+          aspect-ratio:16 / 9;
+          min-height:420px;
+          border-radius:12px;
+          overflow:hidden;
+          background:#efe8db;
+        "
+      >
+        <iframe
+          src="https://online.anyflip.com/wqdjo/dczj/index.html"
+          seamless="seamless"
+          scrolling="no"
+          frameborder="0"
+          allowtransparency="true"
+          allowfullscreen="true"
+          style="
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            border:0;
+            display:block;
+          "
+        ></iframe>
       </div>
+
+      <button
+        onClick="{{ goFull }}"
+        style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:9px;
+          width:100%;
+          margin-top:14px;
+          padding:14px 18px;
+          background:#8f2d24;
+          color:#fff;
+          border:none;
+          border-radius:11px;
+          font-family:inherit;
+          font-size:14px;
+          font-weight:600;
+          cursor:pointer;
+          box-shadow:0 4px 14px -6px rgba(143,45,36,.5);
+        "
+      >
+        <span style="
+          display:inline-block;
+          width:14px;
+          height:14px;
+          border:2px solid #fff;
+          border-radius:3px;
+        "></span>
+
+        Mở toàn màn hình
+      </button>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer style="padding:44px 64px 60px;border-top:1px solid rgba(33,28,22,.08);background:#f2ebdd">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
@@ -690,10 +1022,10 @@ class Component extends DCLogic {
     const activeRev = revBase[s.activeCM];
 
     const models = [
-      { n:'01', name:'Mô hình cổ điển', region:'Anh, Tây Âu', time:'60–80 năm', points:['Bắt đầu từ công nghiệp nhẹ (dệt) rồi đến công nghiệp nặng','Dựa vào vốn tư nhân, kinh tế thị trường, cạnh tranh tự do','Nhà nước ít can thiệp'], examples:'', limit:'Khoảng cách giàu nghèo lớn, ô nhiễm, bóc lột lao động giai đoạn đầu.' },
-      { n:'02', name:'Mô hình Liên Xô cũ', region:'Kế hoạch hóa tập trung', time:'Các kế hoạch 5 năm', points:['Nhà nước giữ toàn bộ tư liệu sản xuất','Ưu tiên tuyệt đối công nghiệp nặng','Phân bổ nguồn lực bằng mệnh lệnh hành chính'], examples:'Sputnik 1957 · cường quốc công nghiệp', limit:'Thiếu hàng tiêu dùng, hiệu quả thấp, quan liêu bao cấp, trì trệ.' },
-      { n:'03', name:'Mô hình Nhật Bản', region:'Nhà nước định hướng, hướng xuất khẩu', time:'20–30 năm', points:['Nhập khẩu & cải tiến công nghệ (Kaizen, TQM)','Đầu tư mạnh vào giáo dục, nhân lực','Nhà nước (MITI) chọn ngành ưu tiên, thúc đẩy xuất khẩu'], examples:'Toyota · Sony · Honda · Canon', limit:'' },
-      { n:'04', name:'Mô hình các nước NICs', region:'Hàn Quốc, Singapore, Đài Loan…', time:'20–30 năm', points:['Công nghiệp hóa hướng về xuất khẩu','Thu hút đầu tư nước ngoài (FDI)','Tiếp thu công nghệ, hội nhập quốc tế'], examples:'Samsung · LG · TSMC', limit:'Phụ thuộc thị trường thế giới, dễ tổn thương trước khủng hoảng.' }
+      { n:'01', name:'Mô hình cổ điển', region:'Anh, Tây Âu', time:'60–80 năm', image:'./assets/model-classical.png', alt:'Minh họa nhà máy hơi nước, dệt may và đường sắt của mô hình công nghiệp hóa cổ điển', points:['Bắt đầu từ công nghiệp nhẹ (dệt) rồi đến công nghiệp nặng','Dựa vào vốn tư nhân, kinh tế thị trường, cạnh tranh tự do','Nhà nước ít can thiệp'], examples:'', limit:'Khoảng cách giàu nghèo lớn, ô nhiễm, bóc lột lao động giai đoạn đầu.' },
+      { n:'02', name:'Mô hình Liên Xô cũ', region:'Kế hoạch hóa tập trung', time:'Các kế hoạch 5 năm', image:'./assets/model-soviet.png', alt:'Minh họa công nghiệp nặng và bàn kế hoạch hóa tập trung của mô hình Liên Xô cũ', points:['Nhà nước giữ toàn bộ tư liệu sản xuất','Ưu tiên tuyệt đối công nghiệp nặng','Phân bổ nguồn lực bằng mệnh lệnh hành chính'], examples:'Sputnik 1957 · cường quốc công nghiệp', limit:'Thiếu hàng tiêu dùng, hiệu quả thấp, quan liêu bao cấp, trì trệ.' },
+      { n:'03', name:'Mô hình Nhật Bản', region:'Nhà nước định hướng, hướng xuất khẩu', time:'20–30 năm', image:'./assets/model-japan.png', alt:'Minh họa robot, lắp ráp ô tô, điện tử và cảng xuất khẩu trong mô hình Nhật Bản', points:['Nhập khẩu & cải tiến công nghệ (Kaizen, TQM)','Đầu tư mạnh vào giáo dục, nhân lực','Nhà nước (MITI) chọn ngành ưu tiên, thúc đẩy xuất khẩu'], examples:'Toyota · Sony · Honda · Canon', limit:'' },
+      { n:'04', name:'Mô hình các nước NICs', region:'Hàn Quốc, Singapore, Đài Loan…', time:'20–30 năm', image:'./assets/model-nics.png', alt:'Minh họa sản xuất bán dẫn, đô thị cảng và mạng lưới xuất khẩu của các nước NICs', points:['Công nghiệp hóa hướng về xuất khẩu','Thu hút đầu tư nước ngoài (FDI)','Tiếp thu công nghệ, hội nhập quốc tế'], examples:'Samsung · LG · TSMC', limit:'Phụ thuộc thị trường thế giới, dễ tổn thương trước khủng hoảng.' }
     ].map(m=>({ ...m, hasExamples: !!m.examples, hasLimit: !!m.limit }));
 
     const posBase = [
