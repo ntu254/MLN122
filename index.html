@@ -27,12 +27,51 @@ button{font-family:inherit}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(7px);opacity:1}}
 @keyframes ringPulse{0%{box-shadow:0 0 0 0 rgba(143,45,36,.35)}70%{box-shadow:0 0 0 10px rgba(143,45,36,0)}100%{box-shadow:0 0 0 0 rgba(143,45,36,0)}}
+.hero-content{position:relative;z-index:1}
+.hero-content,.hero-content *{opacity:1!important;visibility:visible!important}
+#top .hero-content [style*="animation:riseIn"]{animation:none!important;opacity:1!important;transform:none!important}
+.study-visual{padding:18px 64px 38px}
+.study-visual__inner{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(420px,1.1fr);gap:0;align-items:stretch;max-width:1180px;margin:0 auto;background:#211c16;border-radius:16px;overflow:hidden;border:1px solid rgba(33,28,22,.12)}
+.study-visual__copy{padding:28px 32px;color:#f8efe3;align-self:center}
+.study-visual__kicker{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#e7cf9e;margin-bottom:10px}
+.study-visual__title{font-family:'Lora',serif;font-size:clamp(24px,3vw,36px);line-height:1.15;margin:0 0 12px;color:#fff;text-wrap:balance}
+.study-visual__text{font-size:14.5px;line-height:1.65;color:#eadfcc;margin:0;max-width:52ch}
+.study-visual__image{position:relative;min-height:0;height:clamp(250px,28vw,390px);overflow:hidden}
+.study-visual__image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.study-visual__inner:hover .study-visual__image img{transform:scale(1.045)}
+.study-visual__image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,28,22,.42),rgba(33,28,22,0) 42%)}
+.study-visual--light .study-visual__inner{background:#fffdf9}
+.study-visual--light .study-visual__copy{color:#211c16}
+.study-visual--light .study-visual__kicker{color:#8f2d24}
+.study-visual--light .study-visual__title{color:#211c16}
+.study-visual--light .study-visual__text{color:#5c5146}
+.study-visual--light .study-visual__image:after{background:linear-gradient(90deg,rgba(255,253,249,.34),rgba(255,253,249,0) 48%)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.study-visual__image img{animation:none!important;transition:none!important}}
+@media (max-width:920px){
+  .site-header{padding:0 16px!important}
+  .side-nav{display:none!important}
+  .page-shell{margin-left:0!important}
+  #top{padding:78px 24px 54px!important}
+  #top h1{font-size:clamp(34px,10vw,54px)!important}
+  #top [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;max-width:100%!important}
+  .study-visual{padding:8px 22px 42px}
+  .study-visual__inner{grid-template-columns:1fr;border-radius:14px}
+  .study-visual__copy{padding:24px}
+  .study-visual__image{height:clamp(220px,52vw,320px);order:-1}
+  section{scroll-margin-top:74px}
+}
+@media (max-width:640px){
+  header [style*="width:300px"]{display:none!important}
+  main section, main>div, footer{padding-left:20px!important;padding-right:20px!important}
+  #top [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+}
 </style>
 </helmet>
 
 <div style="position:fixed;top:0;left:0;height:3px;width:{{ progress }};background:linear-gradient(90deg,#b3873f,#8f2d24);z-index:60;transition:width .12s linear"></div>
 
-<header style="position:fixed;top:0;left:0;right:0;height:60px;z-index:50;display:flex;align-items:center;gap:18px;padding:0 26px;background:rgba(247,243,236,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(33,28,22,.09)">
+<header class="site-header" style="position:fixed;top:0;left:0;right:0;height:60px;z-index:50;display:flex;align-items:center;gap:18px;padding:0 26px;background:rgba(247,243,236,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(33,28,22,.09)">
   <div style="display:flex;align-items:baseline;gap:10px;flex:none">
     <span style="font-family:'Lora',serif;font-weight:700;font-size:20px;color:#8f2d24;letter-spacing:.5px">Chương 6</span>
     <span style="font-size:12px;color:#a89e90;font-weight:500;display:none">·</span>
@@ -60,7 +99,7 @@ button{font-family:inherit}
   </div>
 </header>
 
-<nav style="position:fixed;top:60px;left:0;bottom:0;width:246px;z-index:40;padding:34px 20px 34px 26px;border-right:1px solid rgba(33,28,22,.08);overflow-y:auto;background:#f4efe6">
+<nav class="side-nav" style="position:fixed;top:60px;left:0;bottom:0;width:246px;z-index:40;padding:34px 20px 34px 26px;border-right:1px solid rgba(33,28,22,.08);overflow-y:auto;background:#f4efe6">
   <div style="font-size:10.5px;font-weight:700;letter-spacing:1.6px;color:#a89e90;text-transform:uppercase;margin-bottom:16px">Mục lục</div>
   <div style="display:flex;flex-direction:column;gap:2px">
     <sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
@@ -76,12 +115,12 @@ button{font-family:inherit}
   </div>
 </nav>
 
-<main style="margin-left:246px;padding-top:60px">
+<main class="page-shell" style="margin-left:246px;padding-top:60px">
 
   <!-- HERO -->
-  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:92px 64px 76px;background:linear-gradient(160deg,#f9f5ee 0%,#f2ebdd 100%);border-bottom:1px solid rgba(33,28,22,.08)">
-    <div style="position:absolute;right:-60px;top:-40px;font-family:'Lora',serif;font-weight:700;font-size:420px;line-height:.8;color:rgba(143,45,36,.05);pointer-events:none;user-select:none;animation:floaty 9s ease-in-out infinite">06</div>
-    <div style="position:relative;max-width:940px">
+  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:92px 64px 76px;background:linear-gradient(90deg,rgba(249,245,238,.98) 0%,rgba(249,245,238,.92) 34%,rgba(249,245,238,.58) 58%,rgba(249,245,238,.2) 100%),linear-gradient(180deg,rgba(33,28,22,.08),rgba(33,28,22,.14)),url('./assets/hero-modernization.png') center right / cover no-repeat #f7f3ec;border-bottom:1px solid rgba(33,28,22,.08)">
+    <div style="position:absolute;right:-60px;top:-40px;z-index:1;font-family:'Lora',serif;font-weight:700;font-size:420px;line-height:.8;color:rgba(143,45,36,.05);pointer-events:none;user-select:none;animation:floaty 9s ease-in-out infinite">06</div>
+    <div class="hero-content" style="max-width:940px">
       <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;animation:riseIn .8s ease both">
         <span style="height:1px;width:44px;background:#b3873f"></span>
         <span style="font-size:12.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#b3873f">Chương 6</span>
@@ -125,6 +164,19 @@ button{font-family:inherit}
       <h2 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Công nghiệp hóa, hiện đại hóa ở Việt Nam</h2>
     </div>
   </div>
+
+  <section class="study-visual study-visual--light" data-reveal aria-label="Minh họa bốn cuộc cách mạng công nghiệp">
+    <div class="study-visual__inner">
+      <div class="study-visual__copy">
+        <div class="study-visual__kicker">Bản đồ thị giác</div>
+        <h3 class="study-visual__title">Từ hơi nước đến AI: một đường tiến hóa của lực lượng sản xuất</h3>
+        <p class="study-visual__text">Ảnh minh họa đặt bốn thời kỳ công nghiệp cạnh nhau để người học nhận ra sự thay đổi của công cụ lao động, năng lượng, dữ liệu và tổ chức sản xuất.</p>
+      </div>
+      <figure class="study-visual__image" style="margin:0">
+        <img src="./assets/industrial-revolutions.png" alt="Minh họa bốn thời kỳ cách mạng công nghiệp từ máy hơi nước, điện khí hóa, máy tính đến robot AI">
+      </figure>
+    </div>
+  </section>
 
   <!-- 1.1 CMCN + Timeline -->
   <section id="cmcn" data-screen-label="Cách mạng công nghiệp" style="padding:34px 64px 60px">
@@ -392,6 +444,19 @@ button{font-family:inherit}
     </div>
   </section>
 
+  <section class="study-visual" data-reveal aria-label="Minh họa hội nhập kinh tế quốc tế">
+    <div class="study-visual__inner">
+      <div class="study-visual__copy">
+        <div class="study-visual__kicker">Hội nhập & chuỗi giá trị</div>
+        <h3 class="study-visual__title">Việt Nam trong mạng lưới thương mại, công nghệ và đầu tư toàn cầu</h3>
+        <p class="study-visual__text">Cảng biển, khu công nghiệp, trung tâm nghiên cứu và các tuyến kết nối giúp phần hội nhập bớt trừu tượng: mở cửa thị trường luôn đi cùng nâng cấp năng lực nội tại.</p>
+      </div>
+      <figure class="study-visual__image" style="margin:0">
+        <img src="./assets/global-integration.png" alt="Minh họa cảng biển, khu công nghiệp và mạng lưới thương mại toàn cầu kết nối với Việt Nam">
+      </figure>
+    </div>
+  </section>
+
   <section style="padding:0 64px 48px" data-reveal>
     <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0 0 18px;color:#211c16">Quá trình hội nhập gồm 4 bước</h4>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
@@ -562,13 +627,19 @@ class Component extends DCLogic {
   componentDidMount(){
     this._sections = ['cmcn','vai-tro','mo-hinh','cnh-vn','hoi-nhap','tac-dong','phuong-huong','ket-luan','sach-bg'];
     const reduce = (this.props.motion === 'Tối giản');
-    const els = document.querySelectorAll('[data-reveal],[data-bar]');
-    els.forEach(el=>{ if(el.dataset.bar===undefined){ el.style.opacity='0'; el.style.transform='translateY(28px)'; el.style.transition='opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)'; } });
-    const fill = (el)=>{ if(el.dataset.bar!==undefined){ el.style.width=el.dataset.bar+'%'; } else { el.style.opacity='1'; el.style.transform='none'; } };
-    if(reduce){ els.forEach(fill); }
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    revealEls.forEach(el=>{
+      el.style.opacity='1';
+      el.style.transform='none';
+      el.style.transition='opacity .45s ease, transform .45s cubic-bezier(.2,.8,.2,1)';
+    });
+    const barEls = document.querySelectorAll('[data-bar]');
+    const fill = (el)=>{ el.style.width=el.dataset.bar+'%'; };
+    if(reduce){ barEls.forEach(fill); }
     else {
       this._io = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ fill(e.target); this._io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
-      els.forEach(el=>this._io.observe(el));
+      barEls.forEach(el=>this._io.observe(el));
+      setTimeout(()=>barEls.forEach(fill), 900);
     }
     this._onScroll = ()=>{ if(this._raf) return; this._raf = requestAnimationFrame(()=>{ this._raf=null; this._update(); }); };
     window.addEventListener('scroll', this._onScroll, {passive:true});
