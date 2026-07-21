@@ -46,11 +46,6 @@ button{font-family:inherit}
 .study-visual--light .study-visual__title{color:#211c16}
 .study-visual--light .study-visual__text{color:#5c5146}
 .study-visual--light .study-visual__image:after{background:linear-gradient(90deg,rgba(255,253,249,.34),rgba(255,253,249,0) 48%)}
-.model-card{perspective:1200px;height:390px;cursor:pointer}
-.model-card__media{position:relative;height:142px;margin:-10px -8px 18px;border-radius:12px;overflow:hidden;background:#efe8db}
-.model-card__media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
-.model-card:hover .model-card__media img{transform:scale(1.06)}
-.model-card__media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,28,22,0),rgba(33,28,22,.18))}
 .mobile-menu-button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(33,28,22,.12);border-radius:12px;background:#fffdf9;color:#211c16;cursor:pointer}
 .mobile-menu-button__icon,.mobile-menu-button__icon:before,.mobile-menu-button__icon:after{display:block;width:18px;height:2px;background:#8f2d24;border-radius:2px;content:""}
 .mobile-menu-button__icon{position:relative}
@@ -83,222 +78,12 @@ button{font-family:inherit}
   .study-visual__inner{grid-template-columns:1fr;border-radius:14px}
   .study-visual__copy{padding:24px}
   .study-visual__image{height:clamp(220px,52vw,320px);order:-1}
-  .model-card{height:400px}
   section{scroll-margin-top:74px}
 }
 @media (max-width:640px){
   main section, main>div, footer{padding-left:20px!important;padding-right:20px!important}
   #top [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
-}
-
-/* =========================
-   BOARD GAME BOOK
-========================= */
-
-.book-section {
-  padding: 48px clamp(24px, 6vw, 96px) 72px;
-  background: linear-gradient(180deg, #f7f3ec, #f2ebdd);
-  border-top: 1px solid rgba(33, 28, 22, 0.08);
-}
-
-.book-section__header {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto 32px;
-}
-
-.book-section__kicker {
-  margin-bottom: 8px;
-  color: #8f2d24;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.book-section__title {
-  margin: 0 0 10px;
-  color: #211c16;
-  font-family: "Lora", serif;
-  font-size: clamp(26px, 3vw, 34px);
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.book-section__description {
-  max-width: 680px;
-  margin: 0;
-  color: #6b6155;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.book-section__viewer-wrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.book-section__card {
-  width: 100%;
-  max-width: 1100px;
-  padding: 18px;
-  overflow: hidden;
-  background: #fffdf9;
-  border: 1px solid rgba(33, 28, 22, 0.09);
-  border-radius: 20px;
-  box-shadow: 0 16px 45px -20px rgba(33, 28, 22, 0.35);
-}
-
-.book-section__frame {
-  position: relative;
-  width: 100%;
-  min-height: 420px;
-  overflow: hidden;
-  background: #efe8db;
-  border-radius: 12px;
-  aspect-ratio: 16 / 9;
-}
-
-.book-section__frame iframe {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.book-section__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  width: 100%;
-  min-height: 48px;
-  margin-top: 14px;
-  padding: 13px 18px;
-  color: #fff;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  background: #8f2d24;
-  border: 0;
-  border-radius: 11px;
-  box-shadow: 0 4px 14px -6px rgba(143, 45, 36, 0.5);
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.book-section__button:hover {
-  background: #6f231c;
-}
-
-.book-section__button:active {
-  transform: scale(0.99);
-}
-
-.book-section__button-icon {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid currentColor;
-  border-radius: 3px;
-}
-
-/* Tablet */
-@media (max-width: 920px) {
-  #sach-bg.book-section {
-    padding: 40px 24px 56px !important;
-  }
-
-  .book-section__header {
-    margin-bottom: 24px;
-  }
-
-  .book-section__card {
-    max-width: 760px;
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  .book-section__frame {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  #sach-bg.book-section {
-    padding: 32px 16px 44px !important;
-  }
-
-  .book-section__header {
-    margin-bottom: 20px;
-  }
-
-  .book-section__kicker {
-    font-size: 10.5px;
-    letter-spacing: 1.2px;
-  }
-
-  .book-section__title {
-    margin-bottom: 8px;
-    font-size: clamp(23px, 7vw, 28px);
-    line-height: 1.25;
-  }
-
-  .book-section__description {
-    font-size: 13.5px;
-    line-height: 1.55;
-  }
-
-  .book-section__card {
-    width: 100%;
-    padding: 10px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px -18px rgba(33, 28, 22, 0.4);
-  }
-
-  .book-section__frame {
-    width: 100%;
-    height: clamp(320px, 105vw, 440px);
-    min-height: 0;
-    border-radius: 9px;
-    aspect-ratio: auto;
-  }
-
-  .book-section__button {
-    min-height: 46px;
-    margin-top: 10px;
-    padding: 11px 14px;
-    font-size: 13px;
-    border-radius: 9px;
-  }
-}
-
-/* Mobile nhỏ */
-@media (max-width: 390px) {
-  #sach-bg.book-section {
-    padding-right: 12px !important;
-    padding-left: 12px !important;
-  }
-
-  .book-section__card {
-    padding: 8px;
-  }
-
-  .book-section__frame {
-    height: clamp(300px, 110vw, 390px);
-  }
-
-  .book-section__button {
-    min-height: 44px;
-  }
 }
 </style>
 </helmet>
@@ -308,16 +93,9 @@ button{font-family:inherit}
 <header class="site-header" style="position:fixed;top:0;left:0;right:0;height:60px;z-index:50;display:flex;align-items:center;gap:18px;padding:0 26px;background:rgba(247,243,236,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(33,28,22,.09)">
   <div style="display:flex;align-items:baseline;gap:10px;flex:none">
     <span style="font-family:'Lora',serif;font-weight:700;font-size:20px;color:#8f2d24;letter-spacing:.5px">Chương 6</span>
-    <span style="font-size:12px;color:#a89e90;font-weight:500;display:none">·</span>
+    <span style="font-size:12px;color:#a89e90;font-weight:500">·</span>
   </div>
-  <button
-    class="mobile-menu-button"
-    onClick="{{ openMenu }}"
-    type="button"
-    aria-label="Mở mục lục"
-    aria-expanded="{{ menuExpanded }}"
-    aria-controls="mobile-menu-drawer"
-  >
+  <button class="mobile-menu-button" onClick="{{ openMenu }}" type="button" aria-label="Mở mục lục" aria-expanded="{{ menuExpanded }}" aria-controls="mobile-menu-drawer">
     <span class="mobile-menu-button__icon" aria-hidden="true"></span>
   </button>
   <div style="flex:1"></div>
@@ -341,10 +119,7 @@ button{font-family:inherit}
       </div>
     </sc-if>
   </div>
-
 </header>
-
-
 
 <nav class="side-nav" style="position:fixed;top:60px;left:0;bottom:0;width:246px;z-index:40;padding:34px 20px 34px 26px;border-right:1px solid rgba(33,28,22,.08);overflow-y:auto;background:#f4efe6">
   <div style="font-size:10.5px;font-weight:700;letter-spacing:1.6px;color:#a89e90;text-transform:uppercase;margin-bottom:16px">Mục lục</div>
@@ -358,16 +133,16 @@ button{font-family:inherit}
     </sc-for>
   </div>
   <div style="margin-top:26px;padding-top:20px;border-top:1px solid rgba(33,28,22,.08);font-size:11px;line-height:1.6;color:#a89e90">
-    Kinh tế chính trị Mác – Lênin<br>CNH, HĐH &amp; Hội nhập KTQT
+    Kinh tế chính trị Mác – Lênin<br>Trí tuệ nhân tạo &amp; Người lao động
   </div>
 </nav>
 
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-  <button class="mobile-menu-overlay" onClick="{{ closeMenu }}" type="button" aria-label="Dong muc luc"></button>
-  <nav id="mobile-menu-drawer" class="mobile-menu-drawer" aria-label="Muc luc mobile">
+  <button class="mobile-menu-overlay" onClick="{{ closeMenu }}" type="button" aria-label="Đóng mục lục"></button>
+  <nav id="mobile-menu-drawer" class="mobile-menu-drawer" aria-label="Mục lục mobile">
     <div class="mobile-menu-drawer__head">
-      <div class="mobile-menu-drawer__title">Chuong 6</div>
-      <button class="mobile-menu-drawer__close" onClick="{{ closeMenu }}" type="button" aria-label="Dong muc luc">×</button>
+      <div class="mobile-menu-drawer__title">Chương 6</div>
+      <button class="mobile-menu-drawer__close" onClick="{{ closeMenu }}" type="button" aria-label="Đóng mục lục">×</button>
     </div>
     <div class="mobile-menu-drawer__list">
       <sc-for list="{{ toc }}" as="t" hint-placeholder-count="9">
@@ -383,36 +158,36 @@ button{font-family:inherit}
 <main class="page-shell" style="margin-left:246px;padding-top:60px">
 
   <!-- HERO -->
-  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:92px 64px 76px;background:linear-gradient(90deg,rgba(249,245,238,.98) 0%,rgba(249,245,238,.92) 34%,rgba(249,245,238,.58) 58%,rgba(249,245,238,.2) 100%),linear-gradient(180deg,rgba(33,28,22,.08),rgba(33,28,22,.14)),url('./assets/hero-modernization.png') center right / cover no-repeat #f7f3ec;border-bottom:1px solid rgba(33,28,22,.08)">
+  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:92px 64px 76px;background:linear-gradient(90deg,rgba(249,245,238,.98) 0%,rgba(249,245,238,.92) 34%,rgba(249,245,238,.58) 58%,rgba(249,245,238,.2) 100%),linear-gradient(180deg,rgba(33,28,22,.08),rgba(33,28,22,.14));border-bottom:1px solid rgba(33,28,22,.08)">
     <div style="position:absolute;right:-60px;top:-40px;z-index:1;font-family:'Lora',serif;font-weight:700;font-size:420px;line-height:.8;color:rgba(143,45,36,.05);pointer-events:none;user-select:none;animation:floaty 9s ease-in-out infinite">06</div>
     <div class="hero-content" style="max-width:940px">
       <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;animation:riseIn .8s ease both">
         <span style="height:1px;width:44px;background:#b3873f"></span>
         <span style="font-size:12.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#b3873f">Chương 6</span>
       </div>
-      <h1 style="font-family:'Lora',serif;font-weight:700;font-size:clamp(38px,5vw,66px);line-height:1.08;letter-spacing:-.5px;margin:0 0 24px;color:#211c16;text-wrap:balance;animation:riseIn .9s ease both .08s">Công nghiệp hóa, hiện đại hóa<br>và hội nhập kinh tế quốc tế<br><span style="color:#8f2d24">của Việt Nam</span></h1>
-      <p style="font-size:18px;line-height:1.65;max-width:620px;color:#6b6155;margin:0 0 44px;animation:riseIn 1s ease both .16s">Từ bốn cuộc cách mạng công nghiệp đến con đường công nghiệp hóa, hiện đại hóa gắn với kinh tế tri thức và hội nhập quốc tế của Việt Nam.</p>
+      <h1 style="font-family:'Lora',serif;font-weight:700;font-size:clamp(38px,5vw,66px);line-height:1.08;letter-spacing:-.5px;margin:0 0 24px;color:#211c16;text-wrap:balance;animation:riseIn .9s ease both .08s">Trí tuệ nhân tạo<br>và người lao động<br><span style="color:#8f2d24">Sự biến đổi bản chất của lao động</span></h1>
+      <p style="font-size:18px;line-height:1.65;max-width:620px;color:#6b6155;margin:0 0 44px;animation:riseIn 1s ease both .16s">Từ lao động cơ bắp đến lao động tri thức: phân tích sâu sắc về tác động của AI, robot và tự động hóa đến bản chất của lao động dưới góc nhìn lý luận Mác – Lênin.</p>
 
       <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(33,28,22,.09);border:1px solid rgba(33,28,22,.09);border-radius:14px;overflow:hidden;max-width:760px;animation:riseIn 1.1s ease both .24s">
           <div style="background:#fffdf9;padding:20px 18px">
-            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">2007</div>
-            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Gia nhập WTO<br><span style="color:#a89e90">(thành viên thứ 150)</span></div>
+            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">4</div>
+            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Cuộc cách mạng<br><span style="color:#a89e90">công nghiệp lịch sử</span></div>
           </div>
           <div style="background:#fffdf9;padding:20px 18px">
-            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">16+</div>
-            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Hiệp định FTA<br><span style="color:#a89e90">đã ký &amp; thực thi</span></div>
+            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">AI</div>
+            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Thách thức mới<br><span style="color:#a89e90">cho bản chất lao động</span></div>
           </div>
           <div style="background:#fffdf9;padding:20px 18px">
-            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">~36,6</div>
-            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">tỷ USD FDI<br><span style="color:#a89e90">đăng ký (2023)</span></div>
+            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">∞</div>
+            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Triết lý Mác<br><span style="color:#a89e90">hướng dẫn phân tích</span></div>
           </div>
           <div style="background:#fffdf9;padding:20px 18px">
-            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">&gt;680</div>
-            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">tỷ USD XNK<br><span style="color:#a89e90">(2023)</span></div>
+            <div style="font-family:'Lora',serif;font-weight:700;font-size:26px;color:#8f2d24;line-height:1">→</div>
+            <div style="font-size:12px;color:#6b6155;margin-top:6px;line-height:1.4">Nhân lực chất lượng<br><span style="color:#a89e90">là giải pháp cho VN</span></div>
           </div>
         </div>
-        <div style="font-size:11px;color:#a89e90;margin-top:10px;font-style:italic">* Số liệu tham khảo, mang tính minh họa.</div>
+        <div style="font-size:11px;color:#a89e90;margin-top:10px;font-style:italic">* Lý luận Mác – Lênin là nền tảng phân tích sâu sắc nhất về bản chất lao động.</div>
       </sc-if>
 
       <div style="display:flex;align-items:center;gap:9px;margin-top:52px;color:#a89e90;font-size:12.5px;font-weight:500">
@@ -422,562 +197,279 @@ button{font-family:inherit}
     </div>
   </section>
 
-  <!-- PART I banner -->
+  <!-- PART I: Cơ sở lý thuyết -->
   <div style="padding:56px 64px 8px" data-reveal>
     <div style="display:flex;align-items:baseline;gap:16px">
       <span style="font-family:'Lora',serif;font-weight:700;font-size:15px;color:#b3873f;letter-spacing:2px">I</span>
-      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Công nghiệp hóa, hiện đại hóa ở Việt Nam</h2>
+      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Cơ sở lý thuyết: Lao động trong triết học Mác</h2>
     </div>
   </div>
 
-  <section class="study-visual study-visual--light" data-reveal aria-label="Minh họa bốn cuộc cách mạng công nghiệp">
+  <section class="study-visual study-visual--light" data-reveal aria-label="Phân biệt lao động cụ thể và lao động trừu tượng">
     <div class="study-visual__inner">
       <div class="study-visual__copy">
-        <div class="study-visual__kicker">Bản đồ thị giác</div>
-        <h3 class="study-visual__title">Từ hơi nước đến AI: một đường tiến hóa của lực lượng sản xuất</h3>
-        <p class="study-visual__text">Ảnh minh họa đặt bốn thời kỳ công nghiệp cạnh nhau để người học nhận ra sự thay đổi của công cụ lao động, năng lượng, dữ liệu và tổ chức sản xuất.</p>
+        <div class="study-visual__kicker">Khái niệm cốt lõi</div>
+        <h3 class="study-visual__title">Lao động cụ thể & lao động trừu tượng: nền tảng hiểu biết giá trị</h3>
+        <p class="study-visual__text">Lao động cụ thể tạo ra giá trị sử dụng (khả năng đáp ứng nhu cầu); lao động trừu tượng tạo ra giá trị hàng hóa. Hiểu rõ sự khác biệt này giúp phân tích tác động của AI đến bản chất lao động.</p>
       </div>
       <figure class="study-visual__image" style="margin:0">
-        <img src="./assets/industrial-revolutions.png" alt="Minh họa bốn thời kỳ cách mạng công nghiệp từ máy hơi nước, điện khí hóa, máy tính đến robot AI">
+        <img src="./assets/labor-distinction.png" alt="Minh họa phân biệt giữa lao động cụ thể và lao động trừu tượng">
       </figure>
     </div>
   </section>
 
-  <!-- 1.1 CMCN + Timeline -->
-  <section id="cmcn" data-screen-label="Cách mạng công nghiệp" style="padding:34px 64px 60px">
+  <!-- 1.1 Đặt vấn đề -->
+  <section id="dat-van-de" data-screen-label="Đặt vấn đề" style="padding:34px 64px 60px">
     <div data-reveal style="margin-bottom:34px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">1.1 · Khái quát</div>
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:32px;margin:0 0 10px;color:#211c16">Lịch sử các cuộc cách mạng công nghiệp</h3>
-      <p style="font-size:15px;color:#6b6155;max-width:640px;margin:0">Chọn từng mốc để xem đặc trưng của mỗi cuộc cách mạng công nghiệp.</p>
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">1.1 · Câu hỏi nền tảng</div>
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:32px;margin:0 0 10px;color:#211c16">Nếu máy móc thay thế lao động, giá trị được tạo ra như thế nào?</h3>
+      <p style="font-size:15px;color:#6b6155;max-width:640px;margin:0">Điều này đặt ra các câu hỏi lý luận quan trọng về vai trò của máy móc, AI trong tạo ra giá trị và phân phối lợi ích xã hội.</p>
     </div>
 
     <div data-reveal style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-left:4px solid #8f2d24;border-radius:14px;padding:22px 26px;margin-bottom:24px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-      <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Khái niệm · Triết học Mác – Lênin</div>
-      <p style="font-size:15.5px;line-height:1.65;color:#3a3229;margin:0">Cách mạng công nghiệp là <strong style="font-weight:600">bước phát triển nhảy vọt của lực lượng sản xuất</strong>, diễn ra khi những thành tựu khoa học – công nghệ được ứng dụng vào sản xuất, làm thay đổi căn bản công cụ lao động, phương thức sản xuất và tổ chức lao động xã hội.</p>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Bối cảnh · Cách mạng công nghiệp 4.0</div>
+      <p style="font-size:15.5px;line-height:1.65;color:#3a3229;margin:0">Cách mạng công nghiệp lần thứ tư với <strong style="font-weight:600">AI, robot, dữ liệu lớn và tự động hóa</strong> đang tạo ra một bước chuyển mới: máy móc không chỉ thực hiện các công việc thể chất mà còn tham gia vào những hoạt động vốn đòi hỏi <strong style="font-weight:600">tư duy, phân tích và sáng tạo</strong> của con người.</p>
     </div>
 
-    <div data-reveal style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:18px;padding:38px 34px 30px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-      <div style="position:relative;margin-bottom:8px">
-        <div style="position:absolute;left:8%;right:8%;top:43px;height:2px;background:linear-gradient(90deg,#e7cf9e,#b3873f,#e7cf9e)"></div>
-        <div style="display:flex">
-          <sc-for list="{{ revList }}" as="rev" hint-placeholder-count="4">
-            <button onClick="{{ rev.select }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;background:none;border:none;cursor:pointer;position:relative;z-index:1;padding:0 6px">
-              <span style="font-family:'Lora',serif;font-weight:700;font-size:15px;color:{{ rev.numColor }};height:22px">{{ rev.n }}</span>
-              <span style="width:18px;height:18px;border-radius:50%;background:#f7f3ec;border:2px solid #b3873f;display:flex;align-items:center;justify-content:center;{{ rev.dotAnim }}">
-                <sc-if value="{{ rev.active }}" hint-placeholder-val="{{ false }}"><span style="width:8px;height:8px;border-radius:50%;background:#8f2d24"></span></sc-if>
-              </span>
-              <span style="font-family:'Lora',serif;font-weight:500;font-size:13.5px;line-height:1.25;text-align:center;color:{{ rev.titleColor }};margin-top:4px">{{ rev.title }}</span>
-              <span style="font-size:11px;color:#a89e90;text-align:center;line-height:1.3">{{ rev.period }}</span>
-              <sc-if value="{{ rev.active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;bottom:-14px;height:3px;width:46px;background:#8f2d24;border-radius:3px"></span></sc-if>
-            </button>
-          </sc-for>
-        </div>
-      </div>
-
-      <div style="margin-top:34px;padding-top:30px;border-top:1px solid rgba(33,28,22,.08);display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start;animation:fadeIn .4s ease" key="{{ activeNum }}">
-        <div style="text-align:center;min-width:150px">
-          <div style="font-family:'Lora',serif;font-weight:700;font-size:72px;line-height:.9;color:rgba(143,45,36,.16)">{{ activeNum }}</div>
-          <div style="display:inline-block;margin-top:12px;padding:6px 14px;background:#f3ede2;border-radius:20px;font-size:12px;font-weight:600;color:#8f2d24">{{ activePeriod }}</div>
-        </div>
-        <div>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:24px;margin:0 0 8px;color:#211c16">{{ activeTitle }}</h4>
-          <p style="font-size:14.5px;line-height:1.6;color:#6b6155;margin:0 0 20px;max-width:560px">{{ activeDesc }}</p>
-          <div style="display:flex;flex-wrap:wrap;gap:14px">
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;background:linear-gradient(135deg,#8f2d24,#6f231c);border-radius:12px">
-              <span style="font-size:11px;font-weight:600;letter-spacing:.5px;color:#e7cf9e;text-transform:uppercase">Cốt lõi</span>
-              <span style="font-size:15px;font-weight:600;color:#fff">{{ activeCore }}</span>
-            </div>
-          </div>
-          <div style="display:grid;gap:10px;margin-top:20px">
-            <sc-for list="{{ activePoints }}" as="p" hint-placeholder-count="2">
-              <div style="display:flex;align-items:flex-start;gap:12px">
-                <span style="flex:none;margin-top:7px;width:6px;height:6px;border-radius:50%;background:#b3873f"></span>
-                <span style="font-size:15px;line-height:1.5;color:#3a3229">{{ p }}</span>
-              </div>
-            </sc-for>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px">
-            <div style="background:#f6f0e6;border-radius:12px;padding:16px 18px">
-              <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#b3873f;text-transform:uppercase;margin-bottom:8px">Bối cảnh</div>
-              <p style="font-size:13.5px;line-height:1.55;color:#3a3229;margin:0">{{ activeContext }}</p>
-            </div>
-            <div style="background:#f0f3ee;border-radius:12px;padding:16px 18px">
-              <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#4f7a4a;text-transform:uppercase;margin-bottom:8px">Kết quả</div>
-              <div style="display:grid;gap:7px">
-                <sc-for list="{{ activeResult }}" as="r" hint-placeholder-count="2">
-                  <div style="display:flex;gap:8px"><span style="color:#4f7a4a;font-weight:700">✓</span><span style="font-size:13.5px;line-height:1.5;color:#3a3229">{{ r }}</span></div>
-                </sc-for>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vai trò CMCN -->
-  <section id="vai-tro" data-screen-label="Vai trò CMCN" style="padding:16px 64px 64px">
-    <div data-reveal style="margin-bottom:28px">
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Vai trò của cách mạng công nghiệp</h3>
-    </div>
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
         <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">01</div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Thúc đẩy tăng trưởng kinh tế</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Nâng cao năng suất, tăng quy mô sản xuất và GDP.</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Lao động cụ thể & trừu tượng</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">AI thay thế hình thức lao động cụ thể nhưng không loại bỏ lao động trừu tượng — nó chỉ chuyển đổi hình thức của nó.</div>
       </div>
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
         <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">02</div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Chuyển dịch cơ cấu kinh tế</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Tăng tỷ trọng công nghiệp – dịch vụ, giảm nông nghiệp.</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Máy móc tạo giá trị?</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Máy móc là tư liệu sản xuất; giá trị của nó được hình thành từ lao động con người trong quá trình sản xuất chúng.</div>
       </div>
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
         <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">03</div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Thúc đẩy tiến bộ khoa học – công nghệ</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Đổi mới sáng tạo, đẩy nhanh chuyển đổi số.</div>
-      </div>
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">04</div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Nâng cao chất lượng cuộc sống</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Tăng thu nhập; phát triển giáo dục, y tế, giao thông.</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#8f2d24,#6f231c);border-radius:14px;padding:24px 22px;box-shadow:0 4px 16px -6px rgba(143,45,36,.4)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#e7cf9e;margin-bottom:12px">05</div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#fff;margin-bottom:6px">Thúc đẩy hội nhập kinh tế quốc tế</div>
-        <div style="font-size:13px;line-height:1.5;color:#f0e6d6">Mở rộng thị trường, thu hút FDI, tăng năng lực cạnh tranh.</div>
-      </div>
-      <div style="background:#fbf1ef;border:1px dashed rgba(143,45,36,.35);border-radius:14px;padding:24px 22px">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font-family:'Lora',serif;font-size:22px;color:#8f2d24">06</span><span style="font-size:10px;font-weight:700;letter-spacing:.8px;color:#8f2d24;text-transform:uppercase;padding:3px 8px;background:rgba(143,45,36,.1);border-radius:20px">Thách thức</span></div>
-        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Đặt ra những thách thức mới</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Thất nghiệp do tự động hóa, chênh lệch công nghệ, ô nhiễm, đòi hỏi nhân lực trình độ cao.</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Sở hữu và phân phối</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Câu hỏi cốt lõi không phải "AI tạo giá trị không?" mà "Ai sở hữu AI và ai được hưởng lợi?"</div>
       </div>
     </div>
   </section>
 
-  <!-- 1.2 Mô hình CNH -->
-  <section id="mo-hinh" data-screen-label="Mô hình CNH" style="padding:16px 64px 68px">
-    <div data-reveal style="margin-bottom:30px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">1.2 · Công nghiệp hóa</div>
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:32px;margin:0 0 14px;color:#211c16">Các mô hình công nghiệp hóa tiêu biểu</h3>
-      <p style="font-size:15px;line-height:1.6;color:#6b6155;max-width:660px;margin:0 0 6px"><strong style="color:#3a3229;font-weight:600">Công nghiệp hóa</strong> là quá trình chuyển nền kinh tế từ sản xuất thủ công sang sản xuất hiện đại dựa trên khoa học – công nghệ.</p>
-      <p style="font-size:13px;color:#a89e90;margin:8px 0 0">Nhấn vào mỗi thẻ để lật xem chi tiết →</p>
-    </div>
-
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
-      <sc-for list="{{ models }}" as="m" hint-placeholder-count="4">
-        <div class="model-card" onClick="{{ flip }}">
-          <div data-flip-inner style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)">
-            <!-- FRONT -->
-            <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:18px 18px 20px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(33,28,22,.05);overflow:hidden">
-              <figure class="model-card__media" style="margin:-10px -8px 18px">
-                <img src="{{ m.image }}" alt="{{ m.alt }}">
-              </figure>
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-                <div style="font-family:'Lora',serif;font-weight:700;font-size:34px;line-height:.9;color:rgba(143,45,36,.18)">{{ m.n }}</div>
-                <div style="display:inline-block;padding:4px 10px;background:#f3ede2;border-radius:20px;font-size:11.5px;font-weight:600;color:#8f2d24;white-space:nowrap">{{ m.time }}</div>
-              </div>
-              <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#b3873f;text-transform:uppercase;margin-bottom:6px">Mô hình</div>
-              <h4 style="font-family:'Lora',serif;font-weight:600;font-size:21px;line-height:1.2;margin:0 0 6px;color:#211c16">{{ m.name }}</h4>
-              <div style="font-size:12.5px;color:#a89e90">{{ m.region }}</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:600;color:#8f2d24">Xem chi tiết
-                <span style="width:14px;height:14px;border-top:2px solid #8f2d24;border-right:2px solid #8f2d24;transform:rotate(45deg)"></span>
-              </div>
-            </div>
-            <!-- BACK -->
-            <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(155deg,#2b2019,#1a130e);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;box-shadow:0 8px 24px -8px rgba(33,28,22,.5)">
-              <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0 0 16px;color:#e7cf9e">{{ m.name }}</h4>
-              <div style="display:grid;gap:12px">
-                <sc-for list="{{ m.points }}" as="pt" hint-placeholder-count="3">
-                  <div style="display:flex;align-items:flex-start;gap:10px">
-                    <span style="flex:none;margin-top:6px;width:5px;height:5px;border-radius:50%;background:#b3873f"></span>
-                    <span style="font-size:14px;line-height:1.45;color:#e8e0d3">{{ pt }}</span>
-                  </div>
-                </sc-for>
-              </div>
-              <sc-if value="{{ m.hasExamples }}" hint-placeholder-val="{{ false }}">
-                <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(231,207,158,.18);font-size:12px;color:#c9bda6"><span style="color:#8f7d6a">Ví dụ: </span>{{ m.examples }}</div>
-              </sc-if>
-              <sc-if value="{{ m.hasLimit }}" hint-placeholder-val="{{ false }}">
-                <div style="margin-top:10px;font-size:12px;line-height:1.45;color:#c9a49e"><span style="color:#c97a6e;font-weight:600">Hạn chế: </span>{{ m.limit }}</div>
-              </sc-if>
-              <div style="flex:1"></div>
-              <div style="font-size:11.5px;color:#8f7d6a">↩ Nhấn để lật lại</div>
-            </div>
-          </div>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <section style="padding:8px 64px 44px" data-reveal>
-    <div style="background:linear-gradient(135deg,#2b2019,#1a130e);border-radius:18px;padding:34px 40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
-      <div style="max-width:660px">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:#e7cf9e;text-transform:uppercase;margin-bottom:10px">Ý nghĩa đối với Việt Nam</div>
-        <p style="font-family:'Lora',serif;font-size:19px;line-height:1.55;color:#f5eee2;margin:0">Trong bối cảnh CMCN 4.0, công nghiệp hóa – hiện đại hóa cần gắn với đổi mới sáng tạo, chuyển đổi số và kinh tế tri thức — nền tảng để nâng cao năng suất, năng lực cạnh tranh quốc gia và đưa Việt Nam trở thành nước phát triển, thu nhập cao.</p>
-      </div>
-      <div style="font-family:'Lora',serif;font-weight:700;font-size:70px;color:rgba(231,207,158,.22);line-height:1">4.0</div>
-    </div>
-  </section>
-
-  <!-- PART II banner -->
-  <div style="padding:52px 64px 8px;background:linear-gradient(180deg,#f7f3ec,#f2ebdd);border-top:1px solid rgba(33,28,22,.08)" data-reveal>
-    <div style="display:flex;align-items:baseline;gap:16px">
-      <span style="font-family:'Lora',serif;font-weight:700;font-size:15px;color:#b3873f;letter-spacing:2px">II</span>
-      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">CNH, HĐH và hội nhập kinh tế quốc tế của Việt Nam</h2>
-    </div>
-  </div>
-
-  <!-- CNH HDH o VN -->
-  <section id="cnh-vn" data-screen-label="CNH HĐH ở Việt Nam" style="padding:38px 64px 60px;background:linear-gradient(180deg,#f2ebdd,#f7f3ec)">
-    <div data-reveal style="margin-bottom:30px">
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0;color:#211c16">Công nghiệp hóa, hiện đại hóa ở Việt Nam</h3>
+  <!-- 1.2 Lao động cụ thể & trừu tượng -->
+  <section id="lao-dong-co-ban" data-screen-label="Lao động cơ bản" style="padding:16px 64px 64px">
+    <div data-reveal style="margin-bottom:28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">1.2 · Lao động trong thời đại AI</div>
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Lao động cụ thể đang chuyển đổi hình thức</h3>
     </div>
     <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start">
 
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
           <span style="width:32px;height:32px;border-radius:9px;background:#f3ede2;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#8f2d24">A</span>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Tính tất yếu khách quan</h4>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Lao động cụ thể: Sự chuyển đổi</h4>
         </div>
         <div style="display:grid;gap:11px">
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Yêu cầu phát triển lực lượng sản xuất</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Xây dựng nền kinh tế độc lập, tự chủ</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Nâng cao năng suất và sức cạnh tranh</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Đáp ứng yêu cầu hội nhập quốc tế</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Thực hiện mục tiêu dân giàu, nước mạnh</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Designer dùng AI tạo hình ảnh thay vì làm thủ công</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Người lao động chuyển sang điều khiển và giám sát máy móc</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Tư duy phê phán và sáng tạo trở nên quan trọng hơn</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Công việc chuyển từ "làm việc thay máy" sang "làm việc cùng máy"</div>
         </div>
       </div>
 
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
           <span style="width:32px;height:32px;border-radius:9px;background:#f3ede2;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#8f2d24">B</span>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Đặc trưng CNH, HĐH ở Việt Nam</h4>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Lao động trừu tượng: Vẫn tồn tại</h4>
         </div>
         <div style="display:grid;gap:11px">
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Gắn với kinh tế tri thức và CMCN 4.0</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Phát triển nhanh, bền vững</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Gắn với kinh tế thị trường định hướng XHCN</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Kết hợp phát triển kinh tế với bảo vệ môi trường, quốc phòng và an ninh</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Phía sau mỗi hệ thống AI là lao động con người</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Lập trình, huấn luyện AI, cung cấp dữ liệu, vận hành</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Lao động trừu tượng chuyển sang dạng "tri thức cao cấp"</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Đòi hỏi trình độ kỹ năng và giáo dục cao hơn</div>
         </div>
       </div>
 
       <div style="background:linear-gradient(150deg,#2b2019,#1a130e);border-radius:16px;padding:28px 26px;box-shadow:0 8px 24px -10px rgba(33,28,22,.5)">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
           <span style="width:32px;height:32px;border-radius:9px;background:rgba(231,207,158,.16);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#e7cf9e">C</span>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#e7cf9e">Nội dung CNH, HĐH</h4>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#e7cf9e">Giá trị: Ai tạo ra?</h4>
         </div>
         <div style="display:grid;gap:11px">
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Phát triển lực lượng sản xuất hiện đại</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Chuyển dịch cơ cấu kinh tế</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Ứng dụng khoa học – công nghệ</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Phát triển nguồn nhân lực chất lượng cao</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Xây dựng kết cấu hạ tầng đồng bộ</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Máy móc tăng năng suất lao động</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Nhưng giá trị được tạo ra bởi lao động sống của con người</span></div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>AI là tư liệu sản xuất, không phải chủ thể lao động</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Ai sở hữu AI quyết định ai được hưởng lợi</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Hoi nhap KTQT -->
-  <section id="hoi-nhap" data-screen-label="Hội nhập KTQT" style="padding:38px 64px 56px">
-    <div data-reveal style="margin-bottom:28px">
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0 0 16px;color:#211c16">Hội nhập kinh tế quốc tế</h3>
-      <div style="border-left:3px solid #b3873f;padding:8px 0 8px 20px;max-width:720px">
-        <span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#b3873f;text-transform:uppercase">Khái niệm</span>
-        <p style="font-size:16px;line-height:1.65;color:#3a3229;margin:6px 0 0">Là quá trình Việt Nam tham gia vào các tổ chức, hiệp định và hoạt động kinh tế khu vực, quốc tế nhằm mở rộng hợp tác và phát triển.</p>
-        <p style="font-size:14px;line-height:1.6;color:#6b6155;margin:10px 0 0"><strong style="color:#3a3229;font-weight:600">Bản chất:</strong> vừa mở rộng hợp tác với bên ngoài, vừa cải cách thể chế và phát triển nội lực bên trong.</p>
-      </div>
-    </div>
-
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0 0 18px;color:#211c16">Tính tất yếu khách quan</h4>
-        <div style="display:grid;gap:11px">
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Xu thế toàn cầu hóa</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Mở rộng thị trường</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Thu hút vốn, công nghệ</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Nâng cao năng lực cạnh tranh</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Thúc đẩy tăng trưởng kinh tế</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Tham gia phân công lao động &amp; chuỗi giá trị toàn cầu</div>
-        </div>
-      </div>
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0 0 18px;color:#211c16">Nội dung hội nhập</h4>
-        <div style="display:grid;gap:11px">
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Hội nhập thương mại</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Hội nhập đầu tư</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Hội nhập tài chính</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Hội nhập khoa học – công nghệ</div>
-          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Tham gia các FTA và tổ chức kinh tế quốc tế</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="study-visual" data-reveal aria-label="Minh họa hội nhập kinh tế quốc tế">
-    <div class="study-visual__inner">
-      <div class="study-visual__copy">
-        <div class="study-visual__kicker">Hội nhập & chuỗi giá trị</div>
-        <h3 class="study-visual__title">Việt Nam trong mạng lưới thương mại, công nghệ và đầu tư toàn cầu</h3>
-        <p class="study-visual__text">Cảng biển, khu công nghiệp, trung tâm nghiên cứu và các tuyến kết nối giúp phần hội nhập bớt trừu tượng: mở cửa thị trường luôn đi cùng nâng cấp năng lực nội tại.</p>
-      </div>
-      <figure class="study-visual__image" style="margin:0">
-        <img src="./assets/global-integration.png" alt="Minh họa cảng biển, khu công nghiệp và mạng lưới thương mại toàn cầu kết nối với Việt Nam">
-      </figure>
-    </div>
-  </section>
-
-  <section style="padding:0 64px 48px" data-reveal>
-    <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0 0 18px;color:#211c16">Quá trình hội nhập gồm 4 bước</h4>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:20px 20px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:8px">01</div>
-        <div style="font-size:14.5px;font-weight:600;color:#211c16;margin-bottom:5px">Chuẩn bị điều kiện</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Thể chế, pháp luật, nhân lực, hạ tầng, năng lực cạnh tranh.</div>
-      </div>
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:20px 20px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:8px">02</div>
-        <div style="font-size:14.5px;font-weight:600;color:#211c16;margin-bottom:5px">Đa dạng hình thức &amp; mức độ</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Song phương, khu vực (ASEAN), tổ chức quốc tế, FTA, chuỗi giá trị.</div>
-      </div>
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:20px 20px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:8px">03</div>
-        <div style="font-size:14.5px;font-weight:600;color:#211c16;margin-bottom:5px">Thực hiện cam kết quốc tế</div>
-        <div style="font-size:13px;line-height:1.5;color:#6b6155">Giảm thuế quan, mở cửa thị trường, sở hữu trí tuệ, tiêu chuẩn lao động – môi trường.</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#8f2d24,#6f231c);border-radius:14px;padding:20px 20px;box-shadow:0 4px 16px -6px rgba(143,45,36,.4)">
-        <div style="font-family:'Lora',serif;font-size:22px;color:#e7cf9e;margin-bottom:8px">04</div>
-        <div style="font-size:14.5px;font-weight:600;color:#fff;margin-bottom:5px">Gắn với phát triển nội lực</div>
-        <div style="font-size:13px;line-height:1.5;color:#f0e6d6">Xây dựng nền kinh tế độc lập, tự chủ; chủ động hội nhập, không lệ thuộc.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tac dong - impact chart -->
-  <section id="tac-dong" data-screen-label="Tác động hội nhập" style="padding:34px 64px 64px">
-    <div data-reveal style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px">
-      <div>
-        <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0 0 6px;color:#211c16">Tác động của hội nhập</h3>
-        <p style="font-size:13px;color:#a89e90;margin:0">Độ dài thanh mang tính minh họa mức độ ảnh hưởng.</p>
-      </div>
-      <div style="display:flex;gap:8px">
-        <button onClick="{{ setAll }}" style="{{ btnAll }}">Tất cả</button>
-        <button onClick="{{ setPos }}" style="{{ btnPos }}">Tích cực</button>
-        <button onClick="{{ setNeg }}" style="{{ btnNeg }}">Tiêu cực</button>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px">
-      <div style="{{ posColStyle }};background:#fffdf9;border:1px solid rgba(79,122,74,.28);border-radius:16px;padding:26px 24px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
-          <span style="width:26px;height:26px;border-radius:50%;background:#4f7a4a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;line-height:1">+</span>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0;color:#3c5c38">Tích cực</h4>
-        </div>
-        <div style="display:grid;gap:18px">
-          <sc-for list="{{ impactPos }}" as="it" hint-placeholder-count="5">
-            <div>
-              <div style="font-size:13.5px;font-weight:500;color:#3a3229;margin-bottom:7px">{{ it.label }}</div>
-              <div style="height:9px;background:#eef2ec;border-radius:6px;overflow:hidden">
-                <div data-bar="{{ it.w }}" style="width:0;height:100%;background:linear-gradient(90deg,#6f9c68,#4f7a4a);border-radius:6px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)"></div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-
-      <div style="{{ negColStyle }};background:#fffdf9;border:1px solid rgba(143,45,36,.22);border-radius:16px;padding:26px 24px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
-          <span style="width:26px;height:26px;border-radius:50%;background:#8f2d24;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;line-height:1">−</span>
-          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0;color:#8f2d24">Tiêu cực</h4>
-        </div>
-        <div style="display:grid;gap:18px">
-          <sc-for list="{{ impactNeg }}" as="it" hint-placeholder-count="5">
-            <div>
-              <div style="font-size:13.5px;font-weight:500;color:#3a3229;margin-bottom:7px">{{ it.label }}</div>
-              <div style="height:9px;background:#f4e9e7;border-radius:6px;overflow:hidden">
-                <div data-bar="{{ it.w }}" style="width:0;height:100%;background:linear-gradient(90deg,#a8443a,#8f2d24);border-radius:6px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)"></div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Phuong huong -->
-  <section id="phuong-huong" data-screen-label="Phương hướng" style="padding:38px 64px 72px;background:linear-gradient(180deg,#f7f3ec,#f2ebdd)">
+  <!-- 1.3 Giá trị thặng dư -->
+  <section id="gia-tri-thang-du" data-screen-label="Giá trị thặng dư" style="padding:16px 64px 68px;background:linear-gradient(180deg,#f2ebdd,#f7f3ec)">
     <div data-reveal style="margin-bottom:30px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">2.1 · Định hướng</div>
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0;color:#211c16">Phương hướng &amp; giải pháp</h3>
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">1.3 · Kinh tế – xã hội</div>
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:32px;margin:0 0 14px;color:#211c16">Giá trị thặng dư và sự phân phối lợi ích</h3>
+      <p style="font-size:15px;line-height:1.6;color:#6b6155;max-width:660px;margin:0">AI và tự động hóa làm thay đổi cách thức tạo ra và phân phối giá trị thặng dư — nền tảng của lợi nhuận và bất bình đẳng kinh tế.</p>
     </div>
 
     <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
-      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:30px 28px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0 0 20px;color:#211c16">Nâng cao hiệu quả hội nhập KTQT</h4>
-        <div style="display:grid;gap:16px">
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">1</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Nhận thức đúng thời cơ và thách thức</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">2</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Xây dựng chiến lược hội nhập phù hợp</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">3</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Chủ động tham gia các liên kết và thực hiện cam kết quốc tế</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">4</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Hoàn thiện thể chế, pháp luật</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">5</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Nâng cao năng lực cạnh tranh quốc gia</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#b3873f;width:20px">6</span><span style="font-size:14.5px;line-height:1.5;color:#3a3229">Xây dựng nền kinh tế độc lập, tự chủ</span></div>
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
+        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0 0 18px;color:#211c16">Tác động tích cực</h4>
+        <div style="display:grid;gap:11px">
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Năng suất tăng, thời gian sản xuất giảm</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Nếu phân phối công bằng: thu nhập cao, thời gian làm việc ngắn</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Giáo dục, y tế, điều kiện sống được cải thiện</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Con người có cơ hội phát triển năng lực sáng tạo</div>
         </div>
       </div>
-
-      <div style="background:linear-gradient(150deg,#8f2d24,#6f231c);border-radius:16px;padding:30px 28px;box-shadow:0 10px 30px -12px rgba(143,45,36,.5)">
-        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:19px;margin:0 0 20px;color:#fff">Xây dựng nền kinh tế độc lập, tự chủ</h4>
-        <div style="display:grid;gap:16px">
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">1</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Phát triển nội lực gắn với hội nhập quốc tế</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">2</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Đổi mới mô hình tăng trưởng, nâng cao năng suất</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">3</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Phát triển khoa học – công nghệ và đổi mới sáng tạo</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">4</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Xây dựng doanh nghiệp Việt Nam vững mạnh</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">5</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Đa dạng hóa thị trường và đối tác</span></div>
-          <div style="display:flex;gap:14px"><span style="flex:none;font-family:'Lora',serif;font-weight:700;color:#e7cf9e;width:20px">6</span><span style="font-size:14.5px;line-height:1.5;color:#f5eee2">Bảo đảm an ninh kinh tế, tài chính và năng lượng</span></div>
+      <div style="background:#fffdf9;border:1px solid rgba(143,45,36,.22);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
+        <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0 0 18px;color:#8f2d24">Rủi ro nếu không phân phối công bằng</h4>
+        <div style="display:grid;gap:11px">
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#8f2d24">›</span>Thất nghiệp tăng do tự động hóa</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#8f2d24">›</span>Bất bình đẳng thu nhập gia tăng</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#8f2d24">›</span>Chủ sở hữu công nghệ tập trung lợi ích</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#8f2d24">›</span>Những người bị hạ lô có ít cơ hội phát triển</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PART II: Thực tiễn -->
+  <div style="padding:52px 64px 8px;background:linear-gradient(180deg,#f7f3ec,#f2ebdd);border-top:1px solid rgba(33,28,22,.08)" data-reveal>
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <span style="font-family:'Lora',serif;font-weight:700;font-size:15px;color:#b3873f;letter-spacing:2px">II</span>
+      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:28px;margin:0;color:#211c16">Sự biến đổi bản chất của lao động</h2>
+    </div>
+  </div>
+
+  <!-- 2.1 Biến đổi lao động -->
+  <section id="bien-doi-lao-dong" data-screen-label="Biến đổi lao động" style="padding:38px 64px 60px;background:linear-gradient(180deg,#f2ebdd,#f7f3ec)">
+    <div data-reveal style="margin-bottom:30px">
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0;color:#211c16">Ba hướng chuyển đổi chính</h3>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start">
+
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+          <span style="width:32px;height:32px;border-radius:9px;background:#f3ede2;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#8f2d24">1</span>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Từ trực tiếp sang điều khiển</h4>
+        </div>
+        <div style="display:grid;gap:11px">
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Con người ngày càng ít trực tiếp thực hiện thao tác</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Chuyển sang thiết kế, vận hành, kiểm soát hệ thống</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Kỹ năng giám sát và ra quyết định trở nên quan trọng</span></div>
+        </div>
+      </div>
+
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:28px 26px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+          <span style="width:32px;height:32px;border-radius:9px;background:#f3ede2;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#8f2d24">2</span>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#211c16">Từ cơ bắp sang tri thức</h4>
+        </div>
+        <div style="display:grid;gap:11px">
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Công việc đòi hỏi xử lý thông tin và phân tích ngày càng nhiều</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Giải quyết vấn đề phức tạp trở nên cốt lõi</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#3a3229"><span style="color:#b3873f">›</span>Yêu cầu giáo dục và kỹ năng suy luận logic cao hơn</div>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(150deg,#2b2019,#1a130e);border-radius:16px;padding:28px 26px;box-shadow:0 8px 24px -10px rgba(33,28,22,.5)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+          <span style="width:32px;height:32px;border-radius:9px;background:rgba(231,207,158,.16);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#e7cf9e">3</span>
+          <h4 style="font-family:'Lora',serif;font-weight:600;font-size:18px;margin:0;color:#e7cf9e">Từ thay thế sang cộng tác</h4>
+        </div>
+        <div style="display:grid;gap:11px">
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>AI không hoàn toàn thay thế mà bổ sung năng lực người</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Designer dùng AI, lập trình viên tối ưu hóa code AI</div>
+          <div style="display:flex;gap:10px;font-size:14px;line-height:1.5;color:#e8e0d3"><span style="color:#b3873f">›</span>Con người vẫn cần tư duy, sáng tạo, chịu trách nhiệm</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.2 Định hướng Việt Nam -->
+  <section id="dinh-huong-vn" data-screen-label="Định hướng Việt Nam" style="padding:38px 64px 56px">
+    <div data-reveal style="margin-bottom:28px">
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0 0 16px;color:#211c16">Phát triển nhân lực chất lượng cao cho Việt Nam</h3>
+      <div style="border-left:3px solid #b3873f;padding:8px 0 8px 20px;max-width:720px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#b3873f;text-transform:uppercase">Tình huống</span>
+        <p style="font-size:16px;line-height:1.65;color:#3a3229;margin:6px 0 0">Nếu người lao động không được trang bị kiến thức và kỹ năng mới, nhiều công việc có tính lặp lại sẽ bị tự động hóa. Ngược lại, nếu Việt Nam phát triển được nguồn nhân lực chất lượng cao, công nghệ có thể trở thành động lực nâng cao năng suất và cạnh tranh quốc gia.</p>
+      </div>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">01</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Nâng cao chất lượng giáo dục</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Chuyển từ ghi nhớ sang phát triển tư duy, sáng tạo, giải quyết vấn đề và khả năng thích ứng.</div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">02</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Phát triển kỹ năng số & AI</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Người lao động cần biết sử dụng công nghệ như công cụ hỗ trợ, đồng thời hiểu giới hạn và rủi ro.</div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">03</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Chú trọng kỹ năng khó thay thế</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Tư duy phản biện, sáng tạo, giao tiếp, hợp tác, ra quyết định, trí tuệ cảm xúc là nên mạnh của con người.</div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">04</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Thúc đẩy học tập suốt đời</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Kiến thức có thể lỗi thời nhanh chóng; người lao động cần liên tục cập nhật và nâng cao kỹ năng.</div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:14px;padding:24px 22px;box-shadow:0 1px 2px rgba(33,28,22,.04)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#b3873f;margin-bottom:12px">05</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#211c16;margin-bottom:6px">Gắn với đổi mới sáng tạo</div>
+        <div style="font-size:13px;line-height:1.5;color:#6b6155">Không chỉ sử dụng công nghệ mà cần phát triển, làm chủ, và định hướng công nghệ phục vụ nhân loại.</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#8f2d24,#6f231c);border-radius:14px;padding:24px 22px;box-shadow:0 4px 16px -6px rgba(143,45,36,.4)">
+        <div style="font-family:'Lora',serif;font-size:22px;color:#e7cf9e;margin-bottom:12px">06</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.4;color:#fff;margin-bottom:6px">Định hướng con người trước công nghệ</div>
+        <div style="font-size:13px;line-height:1.5;color:#f0e6d6">Công nghệ phục vụ sự phát triển của con người, không phải ngược lại.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kết luận -->
   <section id="ket-luan" data-screen-label="Kết luận" style="padding:38px 64px 66px">
     <div data-reveal style="margin-bottom:24px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Kết luận</div>
-      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0;color:#211c16">Kết luận chương</h3>
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Kết luận chương</div>
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0;color:#211c16">AI không thay đổi con người, con người thay đổi xã hội</h3>
     </div>
     <div data-reveal style="display:grid;grid-template-columns:1.4fr 1fr;gap:22px;align-items:stretch">
       <div style="background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:16px;padding:32px 32px;box-shadow:0 1px 3px rgba(33,28,22,.05)">
-        <p style="font-size:16px;line-height:1.7;color:#3a3229;margin:0 0 16px">Công nghiệp hóa, hiện đại hóa là <strong style="font-weight:600">tất yếu khách quan</strong> để Việt Nam phát triển lực lượng sản xuất, xây dựng cơ sở vật chất – kỹ thuật của chủ nghĩa xã hội, gắn với kinh tế tri thức và Cách mạng công nghiệp 4.0.</p>
-        <p style="font-size:16px;line-height:1.7;color:#3a3229;margin:0">Hội nhập kinh tế quốc tế là <strong style="font-weight:600">xu thế khách quan</strong> và động lực quan trọng của phát triển. Việt Nam cần hội nhập chủ động, tích cực, có chiến lược — gắn với hoàn thiện thể chế, nâng cao năng lực cạnh tranh và xây dựng nền kinh tế độc lập, tự chủ.</p>
+        <p style="font-size:16px;line-height:1.7;color:#3a3229;margin:0 0 16px">AI, robot và tự động hóa không làm mất đi hoàn toàn vai trò của lao động con người mà đang làm thay đổi <strong style="font-weight:600">hình thức, nội dung và phương thức tổ chức</strong> lao động.</p>
+        <p style="font-size:16px;line-height:1.7;color:#3a3229;margin:0">Vấn đề cốt lõi không phải "máy móc có thể làm được gì" mà <strong style="font-weight:600">"con người sẽ tổ chức xã hội và quan hệ sản xuất như thế nào để công nghệ phục vụ sự phát triển của con người"</strong>.</p>
       </div>
       <div style="background:linear-gradient(150deg,#8f2d24,#6f231c);border-radius:16px;padding:32px 32px;box-shadow:0 10px 30px -12px rgba(143,45,36,.5);display:flex;flex-direction:column;justify-content:center">
-        <div style="font-family:'Lora',serif;font-weight:700;font-size:14px;color:#e7cf9e;letter-spacing:1px;margin-bottom:16px">MỤC TIÊU</div>
-        <p style="font-family:'Lora',serif;font-size:22px;line-height:1.4;color:#fff;margin:0">Dân giàu, nước mạnh, dân chủ, công bằng, văn minh — phát triển nhanh và bền vững.</p>
+        <div style="font-family:'Lora',serif;font-weight:700;font-size:14px;color:#e7cf9e;letter-spacing:1px;margin-bottom:16px">HƯỚNG ĐI PHÍA TRƯỚC</div>
+        <p style="font-family:'Lora',serif;font-size:22px;line-height:1.4;color:#fff;margin:0">Con người phát huy những năng lực mà AI khó thay thế: <strong style="color:#e7cf9e">tư duy, sáng tạo, đạo đức, trách nhiệm và định hướng công nghệ</strong>.</p>
       </div>
     </div>
   </section>
 
-  <section
-  id="sach-bg"
-  data-screen-label="Sách board game"
-  style="
-    padding:48px clamp(24px,6vw,96px) 72px;
-    background:linear-gradient(180deg,#f7f3ec,#f2ebdd);
-    border-top:1px solid rgba(33,28,22,.08);
-  "
->
-  <div data-reveal style="max-width:1320px;margin:0 auto 32px">
-    <div style="
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:1.5px;
-      color:#8f2d24;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    ">
-      Tài liệu · Ôn tập
+  <!-- Flipbook Section -->
+  <section id="sach-bg" style="padding:48px clamp(24px,6vw,96px) 72px;background:linear-gradient(180deg,#f7f3ec,#f2ebdd);border-top:1px solid rgba(33,28,22,.08)">
+    <div data-reveal style="max-width:1320px;margin:0 auto 32px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#8f2d24;text-transform:uppercase;margin-bottom:8px">Tài liệu · Ôn tập</div>
+      <h3 style="font-family:'Lora',serif;font-weight:600;font-size:30px;margin:0 0 10px;color:#211c16">Sách hướng dẫn chơi board game</h3>
+      <p style="font-size:15px;line-height:1.6;color:#6b6155;max-width:680px;margin:0">Luật chơi và hướng dẫn dưới dạng sách lật — lật từng trang để đọc, hoặc mở toàn màn hình.</p>
     </div>
 
-    <h3 style="
-      font-family:'Lora',serif;
-      font-weight:600;
-      font-size:30px;
-      margin:0 0 10px;
-      color:#211c16;
-    ">
-      Sách hướng dẫn chơi board game
-    </h3>
-
-    <p style="
-      font-size:15px;
-      line-height:1.6;
-      color:#6b6155;
-      max-width:680px;
-      margin:0;
-    ">
-      Luật chơi và hướng dẫn dưới dạng sách lật — lật từng trang để đọc,
-      hoặc mở toàn màn hình.
-    </p>
-  </div>
-
-  <div data-reveal style="display:flex;justify-content:center">
-    <div style="
-      width:100%;
-      max-width:1100px;
-      background:#fffdf9;
-      border:1px solid rgba(33,28,22,.09);
-      border-radius:20px;
-      padding:18px;
-      box-shadow:0 16px 45px -20px rgba(33,28,22,.35);
-    ">
-      <div
-        id="bg-frame"
-        style="
-          position:relative;
-          width:100%;
-          aspect-ratio:16 / 9;
-          min-height:420px;
-          border-radius:12px;
-          overflow:hidden;
-          background:#efe8db;
-        "
-      >
-        <iframe
-          src="https://online.anyflip.com/wqdjo/dczj/index.html"
-          seamless="seamless"
-          scrolling="no"
-          frameborder="0"
-          allowtransparency="true"
-          allowfullscreen="true"
-          style="
-            position:absolute;
-            inset:0;
-            width:100%;
-            height:100%;
-            border:0;
-            display:block;
-          "
-        ></iframe>
+    <div data-reveal style="display:flex;justify-content:center">
+      <div style="width:100%;max-width:1100px;background:#fffdf9;border:1px solid rgba(33,28,22,.09);border-radius:20px;padding:18px;box-shadow:0 16px 45px -20px rgba(33,28,22,.35)">
+        <div id="bg-frame" style="position:relative;width:100%;aspect-ratio:16 / 9;min-height:420px;border-radius:12px;overflow:hidden;background:#efe8db">
+          <iframe src="https://online.anyflip.com/wqdjo/dczj/index.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;"></iframe>
+        </div>
+        <button onClick="{{ goFull }}" style="display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:14px 18px;background:#8f2d24;color:#fff;border:none;border-radius:11px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px -6px rgba(143,45,36,.5);transition:background 0.2s ease,transform 0.2s ease">
+          <span style="display:inline-block;width:14px;height:14px;border:2px solid #fff;border-radius:3px"></span>
+          Mở toàn màn hình
+        </button>
       </div>
-
-      <button
-        onClick="{{ goFull }}"
-        style="
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:9px;
-          width:100%;
-          margin-top:14px;
-          padding:14px 18px;
-          background:#8f2d24;
-          color:#fff;
-          border:none;
-          border-radius:11px;
-          font-family:inherit;
-          font-size:14px;
-          font-weight:600;
-          cursor:pointer;
-          box-shadow:0 4px 14px -6px rgba(143,45,36,.5);
-        "
-      >
-        <span style="
-          display:inline-block;
-          width:14px;
-          height:14px;
-          border:2px solid #fff;
-          border-radius:3px;
-        "></span>
-
-        Mở toàn màn hình
-      </button>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer style="padding:44px 64px 60px;border-top:1px solid rgba(33,28,22,.08);background:#f2ebdd">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
       <div>
         <div style="font-family:'Lora',serif;font-weight:700;font-size:18px;color:#8f2d24">Chương 6</div>
-        <div style="font-size:13px;color:#6b6155;margin-top:4px">Công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế của Việt Nam</div>
+        <div style="font-size:13px;color:#6b6155;margin-top:4px">Trí tuệ nhân tạo và người lao động — Sự biến đổi bản chất của lao động trong thời đại mới</div>
       </div>
       <div style="font-size:12px;color:#a89e90">Kinh tế chính trị Mác – Lênin</div>
     </div>
@@ -991,10 +483,10 @@ button{font-family:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:720},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Đầy đủ&quot;,&quot;Tối giản&quot;],&quot;default&quot;:&quot;Đầy đủ&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hiển thị&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hiển thị&quot;}}">
 class Component extends DCLogic {
-  state = { activeCM:0, impactView:'all', progress:'0%', activeId:'cmcn', showTop:false, query:'', menuOpen:false };
+  state = { impactView:'all', progress:'0%', activeId:'dat-van-de', showTop:false, query:'', menuOpen:false };
 
   componentDidMount(){
-    this._sections = ['cmcn','vai-tro','mo-hinh','cnh-vn','hoi-nhap','tac-dong','phuong-huong','ket-luan','sach-bg'];
+    this._sections = ['dat-van-de','lao-dong-co-ban','gia-tri-thang-du','bien-doi-lao-dong','dinh-huong-vn','ket-luan','sach-bg'];
     const reduce = (this.props.motion === 'Tối giản');
     const revealEls = document.querySelectorAll('[data-reveal]');
     revealEls.forEach(el=>{
@@ -1002,14 +494,6 @@ class Component extends DCLogic {
       el.style.transform='none';
       el.style.transition='opacity .45s ease, transform .45s cubic-bezier(.2,.8,.2,1)';
     });
-    const barEls = document.querySelectorAll('[data-bar]');
-    const fill = (el)=>{ el.style.width=el.dataset.bar+'%'; };
-    if(reduce){ barEls.forEach(fill); }
-    else {
-      this._io = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ fill(e.target); this._io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
-      barEls.forEach(el=>this._io.observe(el));
-      setTimeout(()=>barEls.forEach(fill), 900);
-    }
     this._onScroll = ()=>{ if(this._raf) return; this._raf = requestAnimationFrame(()=>{ this._raf=null; this._update(); }); };
     this._onResizeMenu = ()=>{ if(window.innerWidth > 920 && this.state.menuOpen) this.closeMenu(); };
     this._onKeyDown = (e)=>{ if(e.key === 'Escape' && this.state.menuOpen) this.closeMenu(); };
@@ -1025,7 +509,6 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this._onResizeMenu);
     window.removeEventListener('keydown', this._onKeyDown);
     document.body.style.overflow = '';
-    if(this._io) this._io.disconnect();
   }
   _update(){
     const st = window.scrollY || 0;
@@ -1049,64 +532,18 @@ class Component extends DCLogic {
     document.body.style.overflow = '';
     this.setState({ menuOpen:false });
   }
-  flip(e){
-    const inner = e.currentTarget.querySelector('[data-flip-inner]'); if(!inner) return;
-    const f = inner.dataset.flipped === '1';
-    inner.style.transform = f ? 'rotateY(0deg)' : 'rotateY(180deg)';
-    inner.dataset.flipped = f ? '0' : '1';
-  }
 
   renderVals(){
     const s = this.state; const self = this;
-    const revBase = [
-      { n:'01', title:'Lần thứ nhất', period:'1760 – 1840', core:'Máy hơi nước', desc:'Khởi đầu bằng máy hơi nước, mở ra kỷ nguyên cơ giới hóa sản xuất.', points:['Cơ giới hóa sản xuất','Phát triển ngành dệt, luyện kim, giao thông'], context:'CNTB phát triển mạnh ở Anh; phát minh cơ khí và máy hơi nước thay thế lao động thủ công.', result:['Ra đời nền đại công nghiệp','Chuyển từ sản xuất thủ công sang sản xuất bằng máy móc'] },
-      { n:'02', title:'Lần thứ hai', period:'1870 – 1914', core:'Điện năng, động cơ đốt trong', desc:'Điện năng và động cơ đốt trong đưa sản xuất vào thời đại hàng loạt.', points:['Dây chuyền sản xuất hàng loạt','Phát triển hóa chất, thép, viễn thông'], context:'Khoa học tự nhiên (vật lý, hóa học, điện học) phát triển; cạnh tranh gay gắt giữa các nước tư bản.', result:['Điện năng được ứng dụng rộng rãi','Công nghiệp nặng, giao thông & thông tin liên lạc phát triển mạnh'] },
-      { n:'03', title:'Lần thứ ba', period:'Từ thập niên 1970', core:'Điện tử, máy tính', desc:'Máy tính và Internet khai sinh nền kinh tế tri thức và tự động hóa.', points:['Internet, tự động hóa','Hình thành nền kinh tế tri thức'], context:'Sau Thế chiến II, KH–CN hiện đại bùng nổ; điện tử, bán dẫn và máy tính phát triển nhanh.', result:['Hình thành nền sản xuất tự động','Internet & CNTT thúc đẩy nền kinh tế tri thức'] },
-      { n:'04', title:'Lần thứ tư (4.0)', period:'Từ ~2011 đến nay', core:'AI, IoT, Big Data, Robot', desc:'AI, IoT và dữ liệu lớn dẫn dắt chuyển đổi số và sản xuất thông minh.', points:['Robot, điện toán đám mây, Blockchain','Chuyển đổi số và sản xuất thông minh'], context:'Thế giới bước vào kỷ nguyên số; nền tảng CMCN 3.0 tạo đà cho AI, IoT, Big Data, robot thông minh.', result:['Hình thành nhà máy thông minh & nền kinh tế số','Tự động hóa cao, kết nối dữ liệu theo thời gian thực'] }
-    ];
-    const revList = revBase.map((r,i)=>({
-      ...r, idx:i, active:i===s.activeCM,
-      numColor: i===s.activeCM ? '#8f2d24' : '#c3b8a5',
-      titleColor: i===s.activeCM ? '#211c16' : '#8b8072',
-      dotAnim: i===s.activeCM ? 'animation:ringPulse 1.8s ease-out infinite' : '',
-      select: ()=>self.setState({activeCM:i})
-    }));
-    const activeRev = revBase[s.activeCM];
-
-    const models = [
-      { n:'01', name:'Mô hình cổ điển', region:'Anh, Tây Âu', time:'60–80 năm', image:'./assets/model-classical.png', alt:'Minh họa nhà máy hơi nước, dệt may và đường sắt của mô hình công nghiệp hóa cổ điển', points:['Bắt đầu từ công nghiệp nhẹ (dệt) rồi đến công nghiệp nặng','Dựa vào vốn tư nhân, kinh tế thị trường, cạnh tranh tự do','Nhà nước ít can thiệp'], examples:'', limit:'Khoảng cách giàu nghèo lớn, ô nhiễm, bóc lột lao động giai đoạn đầu.' },
-      { n:'02', name:'Mô hình Liên Xô cũ', region:'Kế hoạch hóa tập trung', time:'Các kế hoạch 5 năm', image:'./assets/model-soviet.png', alt:'Minh họa công nghiệp nặng và bàn kế hoạch hóa tập trung của mô hình Liên Xô cũ', points:['Nhà nước giữ toàn bộ tư liệu sản xuất','Ưu tiên tuyệt đối công nghiệp nặng','Phân bổ nguồn lực bằng mệnh lệnh hành chính'], examples:'Sputnik 1957 · cường quốc công nghiệp', limit:'Thiếu hàng tiêu dùng, hiệu quả thấp, quan liêu bao cấp, trì trệ.' },
-      { n:'03', name:'Mô hình Nhật Bản', region:'Nhà nước định hướng, hướng xuất khẩu', time:'20–30 năm', image:'./assets/model-japan.png', alt:'Minh họa robot, lắp ráp ô tô, điện tử và cảng xuất khẩu trong mô hình Nhật Bản', points:['Nhập khẩu & cải tiến công nghệ (Kaizen, TQM)','Đầu tư mạnh vào giáo dục, nhân lực','Nhà nước (MITI) chọn ngành ưu tiên, thúc đẩy xuất khẩu'], examples:'Toyota · Sony · Honda · Canon', limit:'' },
-      { n:'04', name:'Mô hình các nước NICs', region:'Hàn Quốc, Singapore, Đài Loan…', time:'20–30 năm', image:'./assets/model-nics.png', alt:'Minh họa sản xuất bán dẫn, đô thị cảng và mạng lưới xuất khẩu của các nước NICs', points:['Công nghiệp hóa hướng về xuất khẩu','Thu hút đầu tư nước ngoài (FDI)','Tiếp thu công nghệ, hội nhập quốc tế'], examples:'Samsung · LG · TSMC', limit:'Phụ thuộc thị trường thế giới, dễ tổn thương trước khủng hoảng.' }
-    ].map(m=>({ ...m, hasExamples: !!m.examples, hasLimit: !!m.limit }));
-
-    const posBase = [
-      { label:'Mở rộng thị trường xuất khẩu', w:92 },
-      { label:'Thu hút vốn, khoa học – công nghệ', w:88 },
-      { label:'Thúc đẩy chuyển dịch cơ cấu kinh tế', w:82 },
-      { label:'Nâng cao chất lượng nguồn nhân lực', w:76 },
-      { label:'Nâng cao vị thế quốc tế của Việt Nam', w:72 }
-    ];
-    const negBase = [
-      { label:'Cạnh tranh gay gắt', w:84 },
-      { label:'Phụ thuộc thị trường bên ngoài', w:76 },
-      { label:'Phân phối lợi ích không đồng đều', w:68 },
-      { label:'Thách thức quản lý nhà nước & chủ quyền kinh tế', w:62 },
-      { label:'Rủi ro xã hội, môi trường & an ninh phi truyền thống', w:56 }
-    ];
-    const view = s.impactView;
-    const btn = (on)=> 'padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;' + (on ? 'background:#8f2d24;color:#fff;border:1px solid #8f2d24' : 'background:transparent;color:#6b6155;border:1px solid rgba(33,28,22,.15)');
 
     const tocBase = [
-      { id:'cmcn', num:'01', label:'Cách mạng công nghiệp' },
-      { id:'vai-tro', num:'02', label:'Vai trò CMCN' },
-      { id:'mo-hinh', num:'03', label:'Mô hình công nghiệp hóa' },
-      { id:'cnh-vn', num:'04', label:'CNH, HĐH ở Việt Nam' },
-      { id:'hoi-nhap', num:'05', label:'Hội nhập kinh tế quốc tế' },
-      { id:'tac-dong', num:'06', label:'Tác động của hội nhập' },
-      { id:'phuong-huong', num:'07', label:'Phương hướng & giải pháp' },
-      { id:'ket-luan', num:'08', label:'Kết luận chương' },
-      { id:'sach-bg', num:'09', label:'Sách hướng dẫn board game' }
+      { id:'dat-van-de', num:'01', label:'Câu hỏi nền tảng' },
+      { id:'lao-dong-co-ban', num:'02', label:'Lao động cơ bản' },
+      { id:'gia-tri-thang-du', num:'03', label:'Giá trị thặng dư' },
+      { id:'bien-doi-lao-dong', num:'04', label:'Biến đổi lao động' },
+      { id:'dinh-huong-vn', num:'05', label:'Định hướng Việt Nam' },
+      { id:'ket-luan', num:'06', label:'Kết luận chương' },
+      { id:'sach-bg', num:'07', label:'Sách hướng dẫn board game' }
     ];
     const toc = tocBase.map(t=>({
       ...t, active:t.id===s.activeId,
@@ -1116,14 +553,12 @@ class Component extends DCLogic {
     }));
 
     const idx = [
-      { id:'cmcn', label:'Cách mạng công nghiệp', sub:'Lịch sử 4 cuộc CMCN', kw:'máy hơi nước điện năng máy tính ai iot big data cơ giới hóa tri thức' },
-      { id:'vai-tro', label:'Vai trò của CMCN', sub:'Tăng trưởng, năng suất, cơ cấu', kw:'tăng trưởng năng suất công nghệ chuyển dịch cơ cấu cạnh tranh' },
-      { id:'mo-hinh', label:'Mô hình công nghiệp hóa', sub:'Cổ điển, Liên Xô, Nhật Bản, NICs', kw:'cổ điển anh tây âu liên xô nhật bản nics hàn quốc singapore fdi' },
-      { id:'cnh-vn', label:'CNH, HĐH ở Việt Nam', sub:'Tất yếu, đặc trưng, nội dung', kw:'tất yếu đặc trưng nội dung tri thức 4.0 nhân lực hạ tầng bền vững' },
-      { id:'hoi-nhap', label:'Hội nhập kinh tế quốc tế', sub:'Khái niệm, tất yếu, nội dung', kw:'toàn cầu hóa thị trường vốn thương mại đầu tư tài chính fta wto' },
-      { id:'tac-dong', label:'Tác động của hội nhập', sub:'Tích cực & tiêu cực', kw:'fdi xuất khẩu công nghệ việc làm cạnh tranh phụ thuộc ô nhiễm rủi ro' },
-      { id:'phuong-huong', label:'Phương hướng & giải pháp', sub:'Nâng cao hiệu quả, tự chủ', kw:'chiến lược thể chế pháp luật độc lập tự chủ đổi mới sáng tạo doanh nghiệp an ninh' },
-      { id:'ket-luan', label:'Kết luận chương', sub:'Tổng kết CNH, HĐH & hội nhập', kw:'kết luận tổng kết xu thế khách quan độc lập tự chủ bền vững mục tiêu' },
+      { id:'dat-van-de', label:'Câu hỏi nền tảng', sub:'Nếu máy móc thay thế lao động', kw:'máy móc ai robot giá trị tạo ra lao động' },
+      { id:'lao-dong-co-ban', label:'Lao động cơ bản', sub:'Cụ thể & trừu tượng', kw:'lao động cụ thể trừu tượng giá trị sử dụng hàng hóa' },
+      { id:'gia-tri-thang-du', label:'Giá trị thặng dư', sub:'Tích cực & rủi ro', kw:'giá trị thặng dư phân phối lợi ích bất bình đẳng' },
+      { id:'bien-doi-lao-dong', label:'Biến đổi lao động', sub:'Ba hướng chuyển đổi', kw:'biến đổi từ trực tiếp sang điều khiển tri thức sáng tạo' },
+      { id:'dinh-huong-vn', label:'Định hướng Việt Nam', sub:'Phát triển nhân lực', kw:'giáo dục kỹ năng số ai học tập suốt đời đổi mới sáng tạo' },
+      { id:'ket-luan', label:'Kết luận chương', sub:'Con người định hướng công nghệ', kw:'kết luận tổng kết tương lai con người sáng tạo trách nhiệm' },
       { id:'sach-bg', label:'Sách hướng dẫn board game', sub:'Luật chơi & hướng dẫn', kw:'board game trò chơi hướng dẫn luật chơi sách lật flipbook' }
     ];
     const q = s.query.trim().toLowerCase();
@@ -1136,13 +571,6 @@ class Component extends DCLogic {
       menuExpanded: s.menuOpen ? 'true' : 'false',
       openMenu: () => self.openMenu(),
       closeMenu: () => self.closeMenu(),
-      revList, activeNum:activeRev.n, activeTitle:activeRev.title, activePeriod:activeRev.period, activeCore:activeRev.core, activeDesc:activeRev.desc, activePoints:activeRev.points, activeContext:activeRev.context, activeResult:activeRev.result,
-      models, flip:(e)=>self.flip(e),
-      impactPos:posBase, impactNeg:negBase,
-      btnAll:btn(view==='all'), btnPos:btn(view==='pos'), btnNeg:btn(view==='neg'),
-      setAll:()=>self.setState({impactView:'all'}), setPos:()=>self.setState({impactView:'pos'}), setNeg:()=>self.setState({impactView:'neg'}),
-      posColStyle: view==='neg' ? 'display:none' : '',
-      negColStyle: view==='pos' ? 'display:none' : '',
       toc,
       query:s.query, setQuery:(e)=>self.setState({query:e.target.value}),
       results, hasQuery:q.length>0, hasResults:results.length>0, noResults: q.length>0 && results.length===0,
